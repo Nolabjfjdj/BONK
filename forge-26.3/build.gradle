@@ -17,7 +17,7 @@ minecraft {
 
     runs {
         configureEach {
-            workingDirectory project.file('run')
+            workingDir project.file('run')
             property 'forge.logging.console.level', 'debug'
             mods {
                 "${mod_id}" {
