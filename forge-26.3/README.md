@@ -1,7 +1,7 @@
 # BONK! - Forge 26.3
 
 - Minecraft: 26.3
-- Loader: NeoForge 26.3
+- Loader target: Minecraft Forge 66.0.13
 - Java: 25
 - Mod ID: `bonkmod`
 - Version: `1.0.0`
@@ -9,6 +9,8 @@
 
 ## Build
 
-Run the GitHub Actions workflow from the repository root, or run `gradle build --no-daemon` from this folder with Java 25 installed.
+The GitHub Actions workflow builds this folder with the Forge Gradle configuration.
 
-The first scaffold registers the BONK! Hammer item and a dedicated creative tab. The custom texture, knockback behavior, combo effects, commands, sound effects, and cow rocket feature are not implemented yet.
+## Current source status
+
+The Gradle setup targets Forge, but the files inside `src/` are intentionally still the previous NeoForge source as requested. They have not been ported to Forge yet, so a successful Forge build is not guaranteed until the source code and mod metadata are migrated.
