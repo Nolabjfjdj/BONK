@@ -25,7 +25,8 @@ public final class BonkMod {
             .build());
 
     public BonkMod(FMLJavaModLoadingContext context) {
-        ITEMS.register(context.getModEventBus());
-        CREATIVE_TABS.register(context.getModEventBus());
+        var modBusGroup = context.getModBusGroup();
+        ITEMS.register(modBusGroup);
+        CREATIVE_TABS.register(modBusGroup);
     }
 }
