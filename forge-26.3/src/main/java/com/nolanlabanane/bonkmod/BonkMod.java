@@ -5,8 +5,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -24,8 +24,8 @@ public final class BonkMod {
             .displayItems((parameters, output) -> output.accept(BONK_HAMMER.get()))
             .build());
 
-    public BonkMod(IEventBus modEventBus) {
-        ITEMS.register(modEventBus);
-        CREATIVE_TABS.register(modEventBus);
+    public BonkMod(FMLJavaModLoadingContext context) {
+        ITEMS.register(context.getModEventBus());
+        CREATIVE_TABS.register(context.getModEventBus());
     }
 }
