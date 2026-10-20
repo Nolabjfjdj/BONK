@@ -1,3 +1,5 @@
+modLoader="javafml"
+loaderVersion="[66,)"
 license="${mod_license}"
 
 [[mods]]
@@ -10,15 +12,15 @@ BONK! adds a custom hammer and chaotic knockback fun to Minecraft.
 '''
 
 [[dependencies.${mod_id}]]
-modId="neoforge"
-type="required"
-versionRange="[${neo_version},)"
+modId="forge"
+mandatory=true
+versionRange="[${forge_version},)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.${mod_id}]]
 modId="minecraft"
-type="required"
+mandatory=true
 versionRange="${minecraft_version_range}"
 ordering="NONE"
 side="BOTH"
