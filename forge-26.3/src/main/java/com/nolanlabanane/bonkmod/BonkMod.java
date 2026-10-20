@@ -16,7 +16,7 @@ public final class BonkMod {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
 
-    public static final RegistryObject<Item> BONK_HAMMER = ITEMS.register("bonk_hammer", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> BONK_HAMMER = ITEMS.register("bonk_hammer", () -> new Item(new Item.Properties().setId(ITEMS.key("bonk_hammer")).stacksTo(1)));
     public static final RegistryObject<CreativeModeTab> BONK_TAB = CREATIVE_TABS.register("bonk", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.bonkmod.bonk"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
