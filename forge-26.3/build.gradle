@@ -12,8 +12,14 @@ base {
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
+minecraft {
+    mappings channel: mapping_channel, version: mapping_version
+}
+
 repositories {
-    maven { url = 'https://maven.minecraftforge.net/' }
+    minecraft.mavenizer(it)
+    maven fg.forgeMaven
+    maven fg.minecraftLibsMaven
     mavenCentral()
 }
 
