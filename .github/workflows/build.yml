@@ -1,8 +1,14 @@
-name: Build BONK!
+name: Build BONK! Forge 26.3
 
 on:
   push:
+    paths:
+      - 'forge-26.3/**'
+      - '.github/workflows/build.yml'
   pull_request:
+    paths:
+      - 'forge-26.3/**'
+      - '.github/workflows/build.yml'
   workflow_dispatch:
 
 permissions:
@@ -11,6 +17,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: forge-26.3
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,12 +31,12 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '9.2'
+          gradle-version: '8.14'
       - name: Build mod
-        run: gradle build --no-daemon
+        run: gradle build --no-daemon --stacktrace
       - name: Upload mod JAR
         uses: actions/upload-artifact@v4
         with:
-          name: BONK-mod-1.0.0
-          path: build/libs/*.jar
+          name: BONK-1.0.0-forge-26.3
+          path: forge-26.3/build/libs/*.jar
           if-no-files-found: error
